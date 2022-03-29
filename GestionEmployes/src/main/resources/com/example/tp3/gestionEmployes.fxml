@@ -84,12 +84,12 @@
          </children></HBox>
       <TableView fx:id="tableVue" prefHeight="350.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
         <columns>
-          <TableColumn prefWidth="145.0" text="Nom usager" />
-          <TableColumn minWidth="5.0" prefWidth="127.0" text="Nom famille" />
-            <TableColumn minWidth="5.0" prefWidth="127.0" text="Prénom" />
-            <TableColumn minWidth="5.0" prefWidth="127.0" text="Date début" />
-            <TableColumn minWidth="5.0" prefWidth="127.0" text="Date fin" />
-            <TableColumn minWidth="5.0" prefWidth="146.0" text="No. Employé" />
+          <TableColumn fx:id="nomUsager" prefWidth="145.0" text="Nom usager" />
+          <TableColumn fx:id="nomFamille" minWidth="5.0" prefWidth="127.0" text="Nom famille" />
+            <TableColumn fx:id="prenom" minWidth="5.0" prefWidth="127.0" text="Prénom" />
+            <TableColumn fx:id="dateDebut" minWidth="5.0" prefWidth="127.0" text="Date début" />
+            <TableColumn fx:id="dateFin" minWidth="5.0" prefWidth="127.0" text="Date fin" />
+            <TableColumn fx:id="noEmploye" minWidth="5.0" prefWidth="146.0" text="No. Employé" />
         </columns>
       </TableView>
       <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="800.0">

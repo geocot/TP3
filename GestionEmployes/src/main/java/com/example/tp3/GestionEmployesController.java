@@ -3,6 +3,7 @@ package com.example.tp3;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 
@@ -17,6 +18,12 @@ public class GestionEmployesController implements Initializable {
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
     }*/
+
+    @FXML
+    private TableView<?> tableVue;
+
+    @FXML
+    private TableColumn<?,?> nom;
 
     @FXML
     protected void onRevenirFenPrincClick(){
