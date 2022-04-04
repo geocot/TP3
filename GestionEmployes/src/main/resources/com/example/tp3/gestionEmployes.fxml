@@ -26,7 +26,7 @@
                   <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
                      <children>
                         <Label text="Nom d'usager: " />
-                        <TextField fx:id="lblNomUsager" prefHeight="24.0" prefWidth="230.0" />
+                        <TextField fx:id="txtNomUsager" prefHeight="24.0" prefWidth="230.0" />
                      </children>
                      <padding>
                         <Insets right="10.0" />
@@ -35,7 +35,7 @@
                   <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
                      <children>
                         <Label text="Nom de famille: " />
-                        <TextField prefHeight="24.0" prefWidth="230.0" />
+                        <TextField fx:id="txtNomFamille" prefHeight="24.0" prefWidth="230.0" />
                      </children>
                      <padding>
                         <Insets right="10.0" />
@@ -44,7 +44,7 @@
                   <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
                      <children>
                         <Label text="Prénom: " />
-                        <TextField prefHeight="24.0" prefWidth="230.0" />
+                        <TextField fx:id="txtPrenom" prefHeight="24.0" prefWidth="230.0" />
                      </children>
                      <padding>
                         <Insets right="10.0" />
@@ -56,7 +56,7 @@
                   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Label text="Date début: " />
-                        <DatePicker />
+                        <DatePicker fx:id="datePickerDebut" />
                      </children>
                      <padding>
                         <Insets right="20.0" />
@@ -65,7 +65,7 @@
                   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Label text="Date fin: " />
-                        <DatePicker />
+                        <DatePicker fx:id="datePickerFin" />
                      </children>
                      <padding>
                         <Insets right="20.0" />
@@ -74,7 +74,7 @@
                   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Label text="Numéro employé: " />
-                        <TextField />
+                        <TextField fx:id="txtNoEmploye" />
                      </children>
                      <padding>
                         <Insets right="48.0" />
