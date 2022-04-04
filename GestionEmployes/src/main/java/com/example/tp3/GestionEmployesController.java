@@ -8,13 +8,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-
 import java.net.URL;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class GestionEmployesController implements Initializable {
-
+    DateTimeFormatter dateFormateur = DateTimeFormatter.ofPattern("dd/MM/YYYY");
     @FXML
     private TextField txtNomUsager;
     @FXML
@@ -51,7 +55,7 @@ public class GestionEmployesController implements Initializable {
     private TableColumn<Employe,String> noEmploye;
 
     ObservableList<Employe> listEmploye = FXCollections.observableArrayList(
-            new Employe("Emp1", "Couture", "Martin", "2021-01-01", "9999-01-01", "001")
+            //new Employe("Emp1", "Couture", "Martin", datePickerDebut.getValue(),  "9999-01-01", "001")
     );
 
     private boolean verificationChamps(){
@@ -63,13 +67,18 @@ public class GestionEmployesController implements Initializable {
         return condition;
     }
 
+    private boolean verificationSiEmployeExistant(){
+        boolean condition = false;
+        return condition;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //Ajout de la date d'aujourd'hui dans les cases de dates (début et fin).
         datePickerDebut.setValue(LocalDate.now());
         datePickerFin.setValue(LocalDate.now());
 
-        //TableView
+        //TableView aide via ce tuto: https://www.youtube.com/watch?v=fnU1AlyuguE
         nomUsager.setCellValueFactory(new PropertyValueFactory<Employe, String>("nomUsager"));
         nomFamille.setCellValueFactory(new PropertyValueFactory<Employe, String>("nomFamille"));
         prenom.setCellValueFactory(new PropertyValueFactory<Employe, String>("prenom"));
@@ -77,6 +86,7 @@ public class GestionEmployesController implements Initializable {
         dateFin.setCellValueFactory(new PropertyValueFactory<Employe, String>("dateFin"));
         noEmploye.setCellValueFactory(new PropertyValueFactory<Employe, String>("noEmploye"));
 
+        //Lien avec la liste observable
         tableVue.setItems(listEmploye);
 
         //Ajout des events handler pour les boutons
@@ -84,8 +94,17 @@ public class GestionEmployesController implements Initializable {
             @Override
             public void handle(ActionEvent actionEvent) {
                 if(verificationChamps()){
-                    System.out.println("Ajout Employé");
-                    System.out.println(datePickerDebut.getValue());
+                    //Collecte de la date de début
+                    LocalDate localDateDebut = datePickerDebut.getValue();
+                    Instant instantDebut = Instant.from(localDateDebut.atStartOfDay(ZoneId.systemDefault()));
+                    Date dateDebut = Date.from(instantDebut);
+
+                    //Collecte de la date de fin
+                    LocalDate localDateFin = datePickerFin.getValue();
+                    Instant instantFin = Instant.from(localDateFin.atStartOfDay(ZoneId.systemDefault()));
+                    Date dateFin = Date.from(instantFin);
+                    //Ajout de l'employé dans la liste observable.
+                    listEmploye.add(new Employe(txtNomUsager.getText(), txtNomFamille.getText(), txtPrenom.getText(), dateDebut, dateFin, txtNoEmploye.getText() ));
                 }
             }
         });
