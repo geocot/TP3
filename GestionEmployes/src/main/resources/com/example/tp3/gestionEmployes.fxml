@@ -8,7 +8,7 @@
    <children>
       <AnchorPane id="entete" prefHeight="50.0" prefWidth="800.0">
          <children>
-            <Button alignment="TOP_RIGHT" layoutX="581.0" layoutY="14.0" mnemonicParsing="false" onAction="#onRevenirFenPrincClick" text="Revenir à la fenêtre principale" AnchorPane.rightAnchor="10.0">
+            <Button fx:id="btnRetourFenPrincipale" alignment="TOP_RIGHT" layoutX="581.0" layoutY="14.0" mnemonicParsing="false" text="Revenir à la fenêtre principale" AnchorPane.rightAnchor="10.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></Button>
@@ -104,7 +104,7 @@
                   <Insets left="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="btnSupprime" mnemonicParsing="false" onAction="#onSupprimerFenSelectionClick" text="Supprimer les éléments sélectionnés">
+            <Button fx:id="btnSupprime" mnemonicParsing="false" text="Supprimer les éléments sélectionnés">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin></Button>

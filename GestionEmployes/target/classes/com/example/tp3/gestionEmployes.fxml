@@ -8,7 +8,7 @@
    <children>
       <AnchorPane id="entete" prefHeight="50.0" prefWidth="800.0">
          <children>
-            <Button alignment="TOP_RIGHT" layoutX="581.0" layoutY="14.0" mnemonicParsing="false" onAction="#onRevenirFenPrincClick" text="Revenir à la fenêtre principale" AnchorPane.rightAnchor="10.0">
+            <Button fx:id="btnRetourFenPrincipale" alignment="TOP_RIGHT" layoutX="581.0" layoutY="14.0" mnemonicParsing="false" text="Revenir à la fenêtre principale" AnchorPane.rightAnchor="10.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets></Button>
@@ -26,7 +26,7 @@
                   <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
                      <children>
                         <Label text="Nom d'usager: " />
-                        <TextField fx:id="lblNomUsager" prefHeight="24.0" prefWidth="230.0" />
+                        <TextField fx:id="txtNomUsager" prefHeight="24.0" prefWidth="230.0" />
                      </children>
                      <padding>
                         <Insets right="10.0" />
@@ -35,7 +35,7 @@
                   <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
                      <children>
                         <Label text="Nom de famille: " />
-                        <TextField prefHeight="24.0" prefWidth="230.0" />
+                        <TextField fx:id="txtNomFamille" prefHeight="24.0" prefWidth="230.0" />
                      </children>
                      <padding>
                         <Insets right="10.0" />
@@ -44,7 +44,7 @@
                   <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
                      <children>
                         <Label text="Prénom: " />
-                        <TextField prefHeight="24.0" prefWidth="230.0" />
+                        <TextField fx:id="txtPrenom" prefHeight="24.0" prefWidth="230.0" />
                      </children>
                      <padding>
                         <Insets right="10.0" />
@@ -56,7 +56,7 @@
                   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Label text="Date début: " />
-                        <DatePicker />
+                        <DatePicker fx:id="datePickerDebut" />
                      </children>
                      <padding>
                         <Insets right="20.0" />
@@ -65,7 +65,7 @@
                   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Label text="Date fin: " />
-                        <DatePicker />
+                        <DatePicker fx:id="datePickerFin" />
                      </children>
                      <padding>
                         <Insets right="20.0" />
@@ -74,7 +74,7 @@
                   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Label text="Numéro employé: " />
-                        <TextField />
+                        <TextField fx:id="txtNoEmploye" />
                      </children>
                      <padding>
                         <Insets right="48.0" />
@@ -84,12 +84,12 @@
          </children></HBox>
       <TableView fx:id="tableVue" prefHeight="350.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
         <columns>
-          <TableColumn prefWidth="145.0" text="Nom usager" />
-          <TableColumn minWidth="5.0" prefWidth="127.0" text="Nom famille" />
-            <TableColumn minWidth="5.0" prefWidth="127.0" text="Prénom" />
-            <TableColumn minWidth="5.0" prefWidth="127.0" text="Date début" />
-            <TableColumn minWidth="5.0" prefWidth="127.0" text="Date fin" />
-            <TableColumn minWidth="5.0" prefWidth="146.0" text="No. Employé" />
+          <TableColumn fx:id="nomUsager" prefWidth="145.0" text="Nom usager" />
+          <TableColumn fx:id="nomFamille" minWidth="5.0" prefWidth="127.0" text="Nom famille" />
+            <TableColumn fx:id="prenom" minWidth="5.0" prefWidth="127.0" text="Prénom" />
+            <TableColumn fx:id="dateDebut" minWidth="5.0" prefWidth="127.0" text="Date début" />
+            <TableColumn fx:id="dateFin" minWidth="5.0" prefWidth="127.0" text="Date fin" />
+            <TableColumn fx:id="noEmploye" minWidth="5.0" prefWidth="146.0" text="No. Employé" />
         </columns>
       </TableView>
       <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="800.0">
@@ -104,7 +104,7 @@
                   <Insets left="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="btnSupprime" mnemonicParsing="false" onAction="#onSupprimerFenSelectionClick" text="Supprimer les éléments sélectionnés">
+            <Button fx:id="btnSupprime" mnemonicParsing="false" text="Supprimer les éléments sélectionnés">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin></Button>

@@ -6,11 +6,11 @@ public class Employe {
     private String nomUsager;
     private String nomFamille;
     private String prenom;
-    private Date dateDebut;
-    private Date dateFin;
+    private String dateDebut;
+    private String dateFin;
     private String noEmploye;
 
-    public Employe(String nomUsager, String nomFamille, String prenom, String noEmploye) {
+    public Employe(String nomUsager, String nomFamille, String prenom, String dateDebut, String dateFin, String noEmploye) {
         this.nomUsager = nomUsager;
         this.nomFamille = nomFamille;
         this.prenom = prenom;
@@ -41,19 +41,19 @@ public class Employe {
         this.prenom = prenom;
     }
 
-    public Date getDateDebut() {
+    public String getDateDebut() {
         return dateDebut;
     }
 
-    public void setDateDebut(Date dateDebut) {
+    public void setDateDebut(String dateDebut) {
         this.dateDebut = dateDebut;
     }
 
-    public Date getDateFin() {
+    public String getDateFin() {
         return dateFin;
     }
 
-    public void setDateFin(Date dateFin) {
+    public void setDateFin(String dateFin) {
         this.dateFin = dateFin;
     }
 
