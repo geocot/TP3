@@ -1,14 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.tp3.RechercheActivitesController"
-            prefHeight="400.0" prefWidth="600.0">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="800" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp3.RechercheActivitesController">
+    <children>
+        <AnchorPane id="entete" prefHeight="50.0" prefWidth="800.0">
+            <children>
+                <Button fx:id="btnRetourFenPrincipale" alignment="TOP_RIGHT" layoutX="581.0" layoutY="14.0" mnemonicParsing="false" text="Revenir à la fenêtre principale" AnchorPane.rightAnchor="10.0">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets></Button>
+                <Label layoutY="2.0" prefHeight="16.0" prefWidth="300.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-padding: 10;" text="Recherche d'activités" AnchorPane.leftAnchor="10.0">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Label>
+            </children>
+        </AnchorPane>
+        <HBox prefHeight="200.0" prefWidth="800.0">
+            <children>
+                <VBox prefHeight="150.0" prefWidth="400.0" style="-fx-background-color: lightgrey;" HBox.hgrow="ALWAYS">
+                    <children>
+                  <AnchorPane prefHeight="19.0" prefWidth="600.0" style="-fx-background-color: green;">
+                     <children>
+                        <Label text="Activités" />
+                     </children>
+                  </AnchorPane>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: red;">
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                     <children>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
+                                  <padding>
+                                      <Insets right="10.0" />
+                                  </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
+                                  <padding>
+                                      <Insets right="10.0" />
+                                  </padding>
+                              </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                     </children>
+                        </HBox>
+                    </children></VBox>
+                <VBox prefHeight="150.0" prefWidth="400.0" style="-fx-border-color: lightgrey;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <AnchorPane prefHeight="19.0" prefWidth="200.0" style="-fx-background-color: green;">
+                            <children>
+                                <Label text="Jours" />
+                            </children>
+                        </AnchorPane>
+                  <CheckBox mnemonicParsing="false" text="Dimanche" />
+                  <CheckBox mnemonicParsing="false" text="Lundi" />
+                  <CheckBox mnemonicParsing="false" text="Mardi" />
+                  <CheckBox mnemonicParsing="false" text="Mercredi" />
+                  <CheckBox mnemonicParsing="false" text="Jeudi" />
+                  <CheckBox mnemonicParsing="false" text="Vendredi" />
+                  <CheckBox mnemonicParsing="false" text="Samedi" />
+                    </children></VBox>
+            </children></HBox>
+        <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="800.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="800.0" HBox.hgrow="ALWAYS">
+               <children>
+                   <AnchorPane prefHeight="15.0" prefWidth="400.0">
+                       <children>
+                           <Label text="Période de la journée">
+                           <padding>
+                              <Insets left="10.0" top="5.0" />
+                           </padding></Label>
+                       </children>
+                   </AnchorPane>
+                  <HBox alignment="CENTER" prefHeight="35.0" prefWidth="800.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="Matin">
+                           <padding>
+                              <Insets bottom="10.0" left="40.0" right="40.0" />
+                           </padding></CheckBox>
+                        <CheckBox mnemonicParsing="false" text="Après-midi">
+                           <padding>
+                              <Insets bottom="10.0" left="40.0" right="40.0" />
+                           </padding></CheckBox>
+                        <CheckBox alignment="TOP_LEFT" mnemonicParsing="false" text="Soir">
+                           <padding>
+                              <Insets bottom="10.0" left="40.0" right="40.0" />
+                           </padding>
+                        </CheckBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
 
-</AnchorPane>
+         </children>
+        </HBox>
+        <TableView fx:id="tableVue" prefHeight="171.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="titre" prefWidth="145.0" text="Titre" />
+                <TableColumn fx:id="periode" minWidth="5.0" prefWidth="267.0" text="Période" />
+                <TableColumn fx:id="categorie" minWidth="5.0" prefWidth="298.0" text="Catégorie" />
+                <TableColumn fx:id="prix" minWidth="5.0" prefWidth="89.0" text="Prix" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>
