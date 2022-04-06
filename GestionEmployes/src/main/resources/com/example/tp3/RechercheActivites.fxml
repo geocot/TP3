@@ -23,24 +23,37 @@
             <children>
                 <VBox prefHeight="150.0" prefWidth="400.0" style="-fx-background-color: lightgrey;" HBox.hgrow="ALWAYS">
                     <children>
-                        <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
+                  <AnchorPane prefHeight="19.0" prefWidth="400.0" style="-fx-background-color: green;">
+                     <children>
+                        <Label text="Activités" />
+                     </children>
+                  </AnchorPane>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: red;">
                             <padding>
                                 <Insets right="10.0" />
                             </padding>
-                        </HBox>
-                        <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
-                            <padding>
-                                <Insets right="10.0" />
-                            </padding>
-                        </HBox>
-                        <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
-                            <padding>
-                                <Insets right="10.0" />
-                            </padding>
+                     <children>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
+                                  <padding>
+                                      <Insets right="10.0" />
+                                  </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
+                                  <padding>
+                                      <Insets right="10.0" />
+                                  </padding>
+                              </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                     </children>
                         </HBox>
                     </children></VBox>
                 <VBox prefHeight="150.0" prefWidth="400.0" style="-fx-background-color: lightgrey;" HBox.hgrow="ALWAYS">
                     <children>
+                        <AnchorPane prefHeight="19.0" prefWidth="400.0" style="-fx-background-color: green;">
+                            <children>
+                                <Label text="Jours" />
+                            </children>
+                        </AnchorPane>
                         <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
                             <padding>
                                 <Insets right="20.0" />
@@ -58,15 +71,22 @@
                         </HBox>
                     </children></VBox>
             </children></HBox>
-        <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="800.0" style="-fx-background-color: yellow;" />
+        <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="800.0" style="-fx-background-color: yellow;">
+         <children>
+             <AnchorPane prefHeight="19.0" prefWidth="400.0" style="-fx-background-color: green;">
+                 <children>
+                     <Label text="Période de la journée" />
+                 </children>
+             </AnchorPane>
+
+         </children>
+        </HBox>
         <TableView fx:id="tableVue" prefHeight="350.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
             <columns>
-                <TableColumn fx:id="nomUsager" prefWidth="145.0" text="Nom usager" />
-                <TableColumn fx:id="nomFamille" minWidth="5.0" prefWidth="127.0" text="Nom famille" />
-                <TableColumn fx:id="prenom" minWidth="5.0" prefWidth="127.0" text="Prénom" />
-                <TableColumn fx:id="dateDebut" minWidth="5.0" prefWidth="127.0" text="Date début" />
-                <TableColumn fx:id="dateFin" minWidth="5.0" prefWidth="127.0" text="Date fin" />
-                <TableColumn fx:id="noEmploye" minWidth="5.0" prefWidth="146.0" text="No. Employé" />
+                <TableColumn fx:id="titre" prefWidth="145.0" text="Titre" />
+                <TableColumn fx:id="periode" minWidth="5.0" prefWidth="267.0" text="Période" />
+                <TableColumn fx:id="categorie" minWidth="5.0" prefWidth="298.0" text="Catégorie" />
+                <TableColumn fx:id="prix" minWidth="5.0" prefWidth="89.0" text="Prix" />
             </columns>
         </TableView>
     </children>
