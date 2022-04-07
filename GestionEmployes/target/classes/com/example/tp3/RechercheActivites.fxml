@@ -21,12 +21,15 @@
         </AnchorPane>
         <HBox prefHeight="200.0" prefWidth="800.0">
             <children>
-                <VBox prefHeight="150.0" prefWidth="400.0" style="-fx-background-color: lightgrey;" HBox.hgrow="ALWAYS">
+                <VBox prefHeight="150.0" prefWidth="400.0" style="-fx-border-color: lightgrey;" HBox.hgrow="ALWAYS">
                     <children>
-                  <AnchorPane prefHeight="19.0" prefWidth="600.0" style="-fx-background-color: green;">
+                  <AnchorPane prefHeight="19.0" prefWidth="600.0">
                      <children>
-                        <Label text="Activités" />
+                        <Label style="-fx-font-weight: bold;" text="Activités" />
                      </children>
+                     <VBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </VBox.margin>
                   </AnchorPane>
                         <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: red;">
                             <padding>
@@ -47,20 +50,51 @@
                      </children>
                         </HBox>
                     </children></VBox>
-                <VBox prefHeight="150.0" prefWidth="400.0" style="-fx-border-color: lightgrey;" HBox.hgrow="ALWAYS">
+                <VBox prefHeight="150.0" prefWidth="50.0" style="-fx-border-color: lightgrey;" HBox.hgrow="ALWAYS">
                     <children>
-                        <AnchorPane prefHeight="19.0" prefWidth="200.0" style="-fx-background-color: green;">
+                        <AnchorPane prefHeight="19.0" prefWidth="200.0">
                             <children>
-                                <Label text="Jours" />
+                                <Label alignment="CENTER" style="-fx-font-weight: bold;" text="Jours" />
                             </children>
+                     <VBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </VBox.margin>
                         </AnchorPane>
-                  <CheckBox mnemonicParsing="false" text="Dimanche" />
-                  <CheckBox mnemonicParsing="false" text="Lundi" />
-                  <CheckBox mnemonicParsing="false" text="Mardi" />
-                  <CheckBox mnemonicParsing="false" text="Mercredi" />
-                  <CheckBox mnemonicParsing="false" text="Jeudi" />
-                  <CheckBox mnemonicParsing="false" text="Vendredi" />
-                  <CheckBox mnemonicParsing="false" text="Samedi" />
+                  <CheckBox mnemonicParsing="false" text="Dimanche">
+                     <VBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text="Lundi">
+                     <VBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text="Mardi">
+                     <VBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text="Mercredi">
+                     <VBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text="Jeudi">
+                     <VBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text="Vendredi">
+                     <VBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <CheckBox mnemonicParsing="false" text="Samedi">
+                     <VBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </VBox.margin>
+                  </CheckBox>
                     </children></VBox>
             </children></HBox>
         <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="800.0">
