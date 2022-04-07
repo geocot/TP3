@@ -21,6 +21,8 @@ public class GestionEmployesApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }*/
+
+    //Source: https://www.youtube.com/watch?v=hcM-R-YOKkQ
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("hub.fxml"));
