@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="800" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp3.RechercheActivitesController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="800" prefHeight="600.0" prefWidth="800.0" stylesheets="@appStyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp3.RechercheActivitesController">
     <children>
         <AnchorPane id="entete" prefHeight="50.0" prefWidth="800.0">
             <children>
@@ -25,74 +25,108 @@
                     <children>
                   <AnchorPane prefHeight="19.0" prefWidth="600.0">
                      <children>
-                        <Label style="-fx-font-weight: bold;" text="Activités" />
+                        <Label styleClass="enteteGroupe" text="Activités" />
                      </children>
                      <VBox.margin>
                         <Insets left="10.0" top="5.0" />
                      </VBox.margin>
                   </AnchorPane>
-                        <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: red;">
-                            <padding>
-                                <Insets right="10.0" />
-                            </padding>
+                  <HBox prefHeight="202.0" prefWidth="604.0">
                      <children>
-                              <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
-                                  <padding>
-                                      <Insets right="10.0" />
-                                  </padding>
-                              </HBox>
-                              <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0">
-                                  <padding>
-                                      <Insets right="10.0" />
-                                  </padding>
-                              </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                        <AnchorPane prefHeight="171.0" prefWidth="200.0" styleClass="activites" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label styleClass="enteteGroupe" text="Périodes libres">
+                                 <padding>
+                                    <Insets left="10.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <VBox layoutY="25.0" prefHeight="175.0" prefWidth="154.0">
+                                 <children>
+                                    <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Adultes" />
+                                    <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Enfants" />
+                                    <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Âge d'or" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                         <AnchorPane prefHeight="171.0" prefWidth="200.0" styleClass="activites" HBox.hgrow="ALWAYS">
+                             <children>
+                                 <Label styleClass="enteteGroupe" text="Cours">
+                                     <padding>
+                                         <Insets left="10.0" top="5.0" />
+                                     </padding>
+                                 </Label>
+                                 <VBox layoutY="25.0" prefHeight="175.0" prefWidth="161.0">
+                                     <children>
+                                         <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Adultes" />
+                                         <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Enfants" />
+                                         <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Âge d'or" />
+                                     </children>
+                                 </VBox>
+                             </children>
+                         </AnchorPane>
+                         <AnchorPane prefHeight="171.0" prefWidth="200.0" styleClass="activites" HBox.hgrow="ALWAYS">
+                             <children>
+                                 <Label styleClass="enteteGroupe" text="Certifications">
+                                     <padding>
+                                         <Insets left="10.0" top="5.0" />
+                                     </padding>
+                                 </Label>
+                                 <VBox layoutY="25.0" prefHeight="175.0" prefWidth="130.0">
+                                     <children>
+                                         <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Niveau 1" />
+                                         <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Niveau 2" />
+                                         <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Niveau 3" />
+                                     </children>
+                                 </VBox>
+                             </children>
+                         </AnchorPane>
                      </children>
-                        </HBox>
+                  </HBox>
                     </children></VBox>
-                <VBox prefHeight="150.0" prefWidth="50.0" style="-fx-border-color: lightgrey;" HBox.hgrow="ALWAYS">
+                <VBox prefHeight="225.0" prefWidth="203.0" style="-fx-border-color: lightgrey;" HBox.hgrow="ALWAYS">
                     <children>
                         <AnchorPane prefHeight="19.0" prefWidth="200.0">
                             <children>
-                                <Label alignment="CENTER" style="-fx-font-weight: bold;" text="Jours" />
+                                <Label alignment="CENTER" styleClass="enteteGroupe" text="Jours" />
                             </children>
                      <VBox.margin>
                         <Insets left="10.0" top="5.0" />
                      </VBox.margin>
                         </AnchorPane>
-                  <CheckBox mnemonicParsing="false" text="Dimanche">
+                  <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Dimanche">
                      <VBox.margin>
-                        <Insets left="10.0" top="5.0" />
+                        <Insets />
                      </VBox.margin>
                   </CheckBox>
-                  <CheckBox mnemonicParsing="false" text="Lundi">
+                  <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Lundi">
                      <VBox.margin>
-                        <Insets left="10.0" top="5.0" />
+                         <Insets />
                      </VBox.margin>
                   </CheckBox>
-                  <CheckBox mnemonicParsing="false" text="Mardi">
+                  <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Mardi">
                      <VBox.margin>
-                        <Insets left="10.0" top="5.0" />
+                         <Insets />
                      </VBox.margin>
                   </CheckBox>
-                  <CheckBox mnemonicParsing="false" text="Mercredi">
+                  <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Mercredi">
                      <VBox.margin>
-                        <Insets left="10.0" top="5.0" />
+                         <Insets />
                      </VBox.margin>
                   </CheckBox>
-                  <CheckBox mnemonicParsing="false" text="Jeudi">
+                  <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Jeudi">
                      <VBox.margin>
-                        <Insets left="10.0" top="5.0" />
+                         <Insets />
                      </VBox.margin>
                   </CheckBox>
-                  <CheckBox mnemonicParsing="false" text="Vendredi">
+                  <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Vendredi">
                      <VBox.margin>
-                        <Insets left="10.0" top="5.0" />
+                         <Insets />
                      </VBox.margin>
                   </CheckBox>
-                  <CheckBox mnemonicParsing="false" text="Samedi">
+                  <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Samedi">
                      <VBox.margin>
-                        <Insets left="10.0" top="5.0" />
+                         <Insets />
                      </VBox.margin>
                   </CheckBox>
                     </children></VBox>
@@ -103,7 +137,7 @@
                <children>
                    <AnchorPane prefHeight="15.0" prefWidth="400.0">
                        <children>
-                           <Label text="Période de la journée">
+                           <Label styleClass="enteteGroupe" text="Période de la journée">
                            <padding>
                               <Insets left="10.0" top="5.0" />
                            </padding></Label>
@@ -139,5 +173,10 @@
                 <TableColumn fx:id="prix" minWidth="5.0" prefWidth="89.0" text="Prix" />
             </columns>
         </TableView>
+      <HBox alignment="CENTER" prefHeight="34.0" prefWidth="800.0">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="24.0" prefWidth="171.0" text="Rechercher" />
+         </children>
+      </HBox>
     </children>
 </VBox>
