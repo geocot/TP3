@@ -21,7 +21,7 @@
         </AnchorPane>
         <HBox prefHeight="200.0" prefWidth="800.0">
             <children>
-                <VBox prefHeight="150.0" prefWidth="400.0" style="-fx-border-color: lightgrey;" HBox.hgrow="ALWAYS">
+                <VBox prefHeight="150.0" prefWidth="400.0" style="-fx-background-color: rgb(210, 240, 249);" HBox.hgrow="ALWAYS">
                     <children>
                   <AnchorPane prefHeight="19.0" prefWidth="600.0">
                      <children>
@@ -31,16 +31,16 @@
                         <Insets left="10.0" top="5.0" />
                      </VBox.margin>
                   </AnchorPane>
-                  <HBox prefHeight="202.0" prefWidth="604.0">
+                  <HBox prefHeight="202.0" prefWidth="604.0" style="-fx-background-color: lightblue;">
                      <children>
-                        <AnchorPane prefHeight="171.0" prefWidth="200.0" styleClass="activites" HBox.hgrow="ALWAYS">
+                        <AnchorPane prefHeight="171.0" prefWidth="200.0" style="-fx-background-color: rgb(210, 240, 249);" styleClass="activites" HBox.hgrow="ALWAYS">
                            <children>
                               <Label styleClass="enteteGroupe" text="Périodes libres">
                                  <padding>
                                     <Insets left="10.0" top="5.0" />
                                  </padding>
                               </Label>
-                              <VBox layoutY="25.0" prefHeight="175.0" prefWidth="154.0">
+                              <VBox layoutY="25.0" prefHeight="175.0" prefWidth="109.0">
                                  <children>
                                     <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Adultes" />
                                     <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Enfants" />
@@ -49,14 +49,14 @@
                               </VBox>
                            </children>
                         </AnchorPane>
-                         <AnchorPane prefHeight="171.0" prefWidth="200.0" styleClass="activites" HBox.hgrow="ALWAYS">
+                         <AnchorPane prefHeight="171.0" prefWidth="200.0" style="-fx-background-color: rgb(210, 240, 249);" styleClass="activites" HBox.hgrow="ALWAYS">
                              <children>
                                  <Label styleClass="enteteGroupe" text="Cours">
                                      <padding>
                                          <Insets left="10.0" top="5.0" />
                                      </padding>
                                  </Label>
-                                 <VBox layoutY="25.0" prefHeight="175.0" prefWidth="161.0">
+                                 <VBox layoutY="25.0" prefHeight="175.0" prefWidth="120.0">
                                      <children>
                                          <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Adultes" />
                                          <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Enfants" />
@@ -65,14 +65,14 @@
                                  </VBox>
                              </children>
                          </AnchorPane>
-                         <AnchorPane prefHeight="171.0" prefWidth="200.0" styleClass="activites" HBox.hgrow="ALWAYS">
+                         <AnchorPane prefHeight="171.0" prefWidth="200.0" style="-fx-background-color: rgb(210, 240, 249);" styleClass="activites" HBox.hgrow="ALWAYS">
                              <children>
                                  <Label styleClass="enteteGroupe" text="Certifications">
                                      <padding>
                                          <Insets left="10.0" top="5.0" />
                                      </padding>
                                  </Label>
-                                 <VBox layoutY="25.0" prefHeight="175.0" prefWidth="130.0">
+                                 <VBox layoutY="25.0" prefHeight="175.0" prefWidth="100.0">
                                      <children>
                                          <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Niveau 1" />
                                          <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Niveau 2" />
@@ -84,7 +84,7 @@
                      </children>
                   </HBox>
                     </children></VBox>
-                <VBox prefHeight="225.0" prefWidth="203.0" style="-fx-border-color: lightgrey;" HBox.hgrow="ALWAYS">
+                <VBox prefHeight="225.0" prefWidth="203.0" style="-fx-border-color: lightgrey; -fx-background-color: rgb(188, 232, 246);" HBox.hgrow="ALWAYS">
                     <children>
                         <AnchorPane prefHeight="19.0" prefWidth="200.0">
                             <children>
@@ -133,7 +133,7 @@
             </children></HBox>
         <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="800.0">
          <children>
-            <VBox prefHeight="200.0" prefWidth="800.0" HBox.hgrow="ALWAYS">
+            <VBox prefHeight="200.0" prefWidth="800.0" style="-fx-background-color: rgb(165, 225, 243);" HBox.hgrow="ALWAYS">
                <children>
                    <AnchorPane prefHeight="15.0" prefWidth="400.0">
                        <children>
@@ -173,7 +173,7 @@
                 <TableColumn fx:id="prix" minWidth="5.0" prefWidth="89.0" text="Prix" />
             </columns>
         </TableView>
-      <HBox alignment="CENTER" prefHeight="34.0" prefWidth="800.0">
+      <HBox alignment="CENTER" prefHeight="34.0" prefWidth="800.0" style="-fx-background-color: rgb(143, 217, 240);">
          <children>
             <Button alignment="CENTER" mnemonicParsing="false" prefHeight="24.0" prefWidth="171.0" text="Rechercher" />
          </children>
