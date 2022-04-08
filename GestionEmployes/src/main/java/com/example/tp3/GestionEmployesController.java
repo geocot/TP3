@@ -21,7 +21,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
 
 public class GestionEmployesController implements Initializable {
@@ -65,9 +67,23 @@ public class GestionEmployesController implements Initializable {
     @FXML
     private Button btnEffacer;
 
+
+
     ObservableList<Employe> listEmploye = FXCollections.observableArrayList(
-            //new Employe("Emp1", "Couture", "Martin", datePickerDebut.getValue(),  "9999-01-01", "001")
+            new Employe("Emp1", "Doe", "John", new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime(),  new GregorianCalendar(2018, Calendar.JUNE, 5).getTime(), "001"),
+            new Employe("Emp2", "Deer", "Jane", new GregorianCalendar(2016, Calendar.DECEMBER, 19).getTime(),  new GregorianCalendar(2020, Calendar.JANUARY, 30).getTime(), "002")
     );
+
+    private void rechercher(){
+        tableVue.getSelectionModel().clearSelection();
+           for (int i=0; i<listEmploye.size(); i++){
+               if (txtNoEmploye.getText().contentEquals(listEmploye.get(i).getNoEmploye() )){
+                   tableVue.getSelectionModel().select(i);
+               }
+           }
+        //tableVue.getSelectionModel().select(1);
+    }
+
 
     private boolean verificationChampsAjout(){
         boolean condition = false;
@@ -115,8 +131,16 @@ public class GestionEmployesController implements Initializable {
         //Ajout de la date d'aujourd'hui dans les cases de dates (début et fin).
         datePickerDebut.setValue(LocalDate.now());
         datePickerFin.setValue(LocalDate.now());
-
          */
+
+        //Placeholder lorsque la table est vide
+        tableVue.setPlaceholder(
+                new Label("Aucune information"));
+        //Model de sélection multiple Source: https://jenkov.com/tutorials/javafx/tableview.html
+        TableView.TableViewSelectionModel<Employe> selectionModel =
+                tableVue.getSelectionModel();
+        selectionModel.setSelectionMode(SelectionMode.MULTIPLE);
+        //Efface le formulaire
         effacerFormulaire();
         //TableView aide via ce tuto: https://www.youtube.com/watch?v=fnU1AlyuguE
         nomUsager.setCellValueFactory(new PropertyValueFactory<Employe, String>("nomUsager"));
@@ -156,7 +180,7 @@ public class GestionEmployesController implements Initializable {
             public void handle(ActionEvent actionEvent) {
                 lblErreur.setText(""); //Vide les erreurs
                 if(verificationChampsRecherche()){
-
+                    rechercher();
                 } else{
                     lblErreur.setText("Veuillez remplir au moins 1 champs!");
                 }
