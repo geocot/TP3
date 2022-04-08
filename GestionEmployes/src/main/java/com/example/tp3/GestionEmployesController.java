@@ -81,7 +81,6 @@ public class GestionEmployesController implements Initializable {
                    tableVue.getSelectionModel().select(i);
                }
            }
-        //tableVue.getSelectionModel().select(1);
     }
 
 
