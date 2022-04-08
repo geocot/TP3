@@ -60,15 +60,28 @@ public class GestionEmployesController implements Initializable {
     private TableColumn<Employe,String> dateFin;
     @FXML
     private TableColumn<Employe,String> noEmploye;
+    @FXML
+    private Label lblErreur;
+    @FXML
+    private Button btnEffacer;
 
     ObservableList<Employe> listEmploye = FXCollections.observableArrayList(
             //new Employe("Emp1", "Couture", "Martin", datePickerDebut.getValue(),  "9999-01-01", "001")
     );
 
-    private boolean verificationChamps(){
+    private boolean verificationChampsAjout(){
         boolean condition = false;
 
         if(txtNomUsager.getText() !="" & txtNomFamille.getText() !="" & txtPrenom.getText() !="" & txtNoEmploye.getText() !="") {
+            condition = true;
+        }
+        return condition;
+    }
+
+    private boolean verificationChampsRecherche(){
+        boolean condition = false;
+
+        if(txtNomUsager.getText().length() >0 || txtNomFamille.getText().length() >0 || txtPrenom.getText().length() >0 || txtNoEmploye.getText().length() >0) {
             condition = true;
         }
         return condition;
@@ -108,7 +121,8 @@ public class GestionEmployesController implements Initializable {
         btnAjout.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                if(verificationChamps()){
+                lblErreur.setText(""); //Vide les erreurs
+                if(verificationChampsAjout()){
                     //Collecte de la date de début
                     LocalDate localDateDebut = datePickerDebut.getValue();
                     Instant instantDebut = Instant.from(localDateDebut.atStartOfDay(ZoneId.systemDefault()));
@@ -120,18 +134,26 @@ public class GestionEmployesController implements Initializable {
                     Date dateFin = Date.from(instantFin);
                     //Ajout de l'employé dans la liste observable.
                     listEmploye.add(new Employe(txtNomUsager.getText(), txtNomFamille.getText(), txtPrenom.getText(), dateDebut, dateFin, txtNoEmploye.getText() ));
+                } else{
+                    lblErreur.setText("Veuillez remplir tout les champs!");
                 }
             }
         });
         btnRecherche.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                System.out.println("Recherche terminée");
+                lblErreur.setText(""); //Vide les erreurs
+                if(verificationChampsRecherche()){
+
+                } else{
+                    lblErreur.setText("Veuillez remplir au moins 1 champs!");
+                }
             }
         });
         btnSupprime.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
+                lblErreur.setText(""); //Vide les erreurs
                 System.out.println("Suppression des éléments");
             }
         });
@@ -146,5 +168,12 @@ public class GestionEmployesController implements Initializable {
             }
         });
 
+        btnEffacer.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+
+            }
+        });
     }
-}
+
+    }
