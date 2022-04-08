@@ -72,7 +72,7 @@ public class GestionEmployesController implements Initializable {
     private boolean verificationChampsAjout(){
         boolean condition = false;
 
-        if(txtNomUsager.getText() !="" & txtNomFamille.getText() !="" & txtPrenom.getText() !="" & txtNoEmploye.getText() !="") {
+        if(txtNomUsager.getText() !="" & txtNomFamille.getText() !="" & txtPrenom.getText() !="" & txtNoEmploye.getText() !="" & datePickerDebut.getEditor().getText() !="" & datePickerFin.getEditor().getText() !="")  {
             condition = true;
         }
         return condition;
@@ -81,7 +81,7 @@ public class GestionEmployesController implements Initializable {
     private boolean verificationChampsRecherche(){
         boolean condition = false;
 
-        if(txtNomUsager.getText().length() >0 || txtNomFamille.getText().length() >0 || txtPrenom.getText().length() >0 || txtNoEmploye.getText().length() >0) {
+        if(txtNomUsager.getText().length() >0 || txtNomFamille.getText().length() >0 || txtPrenom.getText().length() >0 || txtNoEmploye.getText().length() >0 || datePickerDebut.getEditor().getText() !="" || datePickerFin.getEditor().getText() !="") {
             condition = true;
         }
         return condition;
@@ -92,7 +92,7 @@ public class GestionEmployesController implements Initializable {
         return condition;
     }
 
-    public void switchToHub(ActionEvent event) throws IOException {
+    private void switchToHub(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("hub.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -100,12 +100,24 @@ public class GestionEmployesController implements Initializable {
         stage.show();
     }
 
+    private void effacerFormulaire(){
+        txtNomUsager.setText("");
+        txtNomFamille.setText("");
+        txtNoEmploye.setText("");
+        txtPrenom.setText("");
+        datePickerDebut.getEditor().setText("");
+        datePickerFin.getEditor().setText("");
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        /*
         //Ajout de la date d'aujourd'hui dans les cases de dates (début et fin).
         datePickerDebut.setValue(LocalDate.now());
         datePickerFin.setValue(LocalDate.now());
 
+         */
+        effacerFormulaire();
         //TableView aide via ce tuto: https://www.youtube.com/watch?v=fnU1AlyuguE
         nomUsager.setCellValueFactory(new PropertyValueFactory<Employe, String>("nomUsager"));
         nomFamille.setCellValueFactory(new PropertyValueFactory<Employe, String>("nomFamille"));
@@ -171,7 +183,7 @@ public class GestionEmployesController implements Initializable {
         btnEffacer.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-
+                effacerFormulaire();
             }
         });
     }
