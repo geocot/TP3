@@ -1,5 +1,7 @@
 package com.example.tp3;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -13,6 +15,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
 
 public class RechercheActivitesController implements Initializable {
@@ -27,6 +31,9 @@ public class RechercheActivitesController implements Initializable {
         stage.show();
     }
 
+    ObservableList<Activite> listEmploye = FXCollections.observableArrayList(
+
+    );
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

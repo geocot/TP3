@@ -133,7 +133,7 @@ public class GestionEmployesController implements Initializable {
         return condition;
     }
 
-    private boolean verificationSiEmployeExistant(){
+    private boolean verificationSiEmployeExistant(){  //TODO -> Vérifier si l'employé est présent lors de l'ajout.
         boolean condition = false;
         return condition;
     }
