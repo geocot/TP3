@@ -76,9 +76,32 @@ public class GestionEmployesController implements Initializable {
 
     private void rechercher(){
         tableVue.getSelectionModel().clearSelection();
+
            for (int i=0; i<listEmploye.size(); i++){
-               if (txtNoEmploye.getText().contentEquals(listEmploye.get(i).getNoEmploye() )){
-                   tableVue.getSelectionModel().select(i);
+               //Mise des conditions à false
+               boolean condtionNoEmploye = false;
+               boolean condtionNomFamille = false;
+               boolean conditionPrenom = false;
+               boolean conditionNomUsager = false;
+
+               if (txtNoEmploye.getText() == ""|| txtNoEmploye.getText().contentEquals(listEmploye.get(i).getNoEmploye())){
+                  condtionNoEmploye = true;
+               }
+
+               if (txtNomFamille.getText() == ""|| txtNomFamille.getText().contentEquals(listEmploye.get(i).getNomFamille())){
+                   condtionNomFamille = true;
+               }
+
+               if (txtNomUsager.getText() == ""|| txtNomUsager.getText().contentEquals(listEmploye.get(i).getNomUsager())){
+                   condtionNomFamille = true;
+               }
+
+               if (txtPrenom.getText() == ""|| txtPrenom.getText().contentEquals(listEmploye.get(i).getPrenom())){
+                   condtionNomFamille = true;
+               }
+
+               if (condtionNoEmploye & condtionNomFamille & conditionNomUsager & conditionPrenom) {
+                   tableVue.getSelectionModel().select(i); //Si tout est à vrai, sélectionner la ligne.
                }
            }
     }
