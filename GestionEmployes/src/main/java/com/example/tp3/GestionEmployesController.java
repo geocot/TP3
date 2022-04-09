@@ -65,14 +65,20 @@ public class GestionEmployesController implements Initializable {
     @FXML
     private Label lblErreur;
     @FXML
-    private Button btnEffacer;
-
+    private Button btnEffacerFormulaire;
+    @FXML
+    private Button btnEffacerSelection;
 
 
     ObservableList<Employe> listEmploye = FXCollections.observableArrayList(
             new Employe("Emp1", "Doe", "John", new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime(),  new GregorianCalendar(2018, Calendar.JUNE, 5).getTime(), "001"),
             new Employe("Emp2", "Deer", "Jane", new GregorianCalendar(2016, Calendar.DECEMBER, 19).getTime(),  new GregorianCalendar(2020, Calendar.JANUARY, 30).getTime(), "002")
     );
+
+    private void effacerEnregistrementTableVue(){
+        int indexSelection =  tableVue.getSelectionModel().getSelectedIndex();
+        listEmploye.remove(indexSelection);
+    }
 
     private void rechercher(){
         tableVue.getSelectionModel().clearSelection();
@@ -93,16 +99,18 @@ public class GestionEmployesController implements Initializable {
                }
 
                if (txtNomUsager.getText() == ""|| txtNomUsager.getText().contentEquals(listEmploye.get(i).getNomUsager())){
-                   condtionNomFamille = true;
+                   conditionNomUsager = true;
                }
 
                if (txtPrenom.getText() == ""|| txtPrenom.getText().contentEquals(listEmploye.get(i).getPrenom())){
-                   condtionNomFamille = true;
+                   conditionPrenom = true;
                }
 
                if (condtionNoEmploye & condtionNomFamille & conditionNomUsager & conditionPrenom) {
                    tableVue.getSelectionModel().select(i); //Si tout est à vrai, sélectionner la ligne.
                }
+
+               //TODO -> faire la recherche sur les dates.
            }
     }
 
@@ -204,7 +212,7 @@ public class GestionEmployesController implements Initializable {
                 if(verificationChampsRecherche()){
                     rechercher();
                 } else{
-                    lblErreur.setText("Veuillez remplir au moins 1 champs!");
+                    lblErreur.setText("Veuillez remplir au moins 1 champ!");
                 }
             }
         });
@@ -212,7 +220,7 @@ public class GestionEmployesController implements Initializable {
             @Override
             public void handle(ActionEvent actionEvent) {
                 lblErreur.setText(""); //Vide les erreurs
-                System.out.println("Suppression des éléments");
+                effacerEnregistrementTableVue();
             }
         });
         btnRetourFenPrincipale.setOnAction(new EventHandler<ActionEvent>() {
@@ -226,7 +234,14 @@ public class GestionEmployesController implements Initializable {
             }
         });
 
-        btnEffacer.setOnAction(new EventHandler<ActionEvent>() {
+        btnEffacerSelection.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                tableVue.getSelectionModel().clearSelection();
+            }
+        });
+
+        btnEffacerFormulaire.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 effacerFormulaire();

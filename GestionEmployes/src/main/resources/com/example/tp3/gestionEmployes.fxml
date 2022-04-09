@@ -88,7 +88,7 @@
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin></Label>
-            <Button fx:id="btnEffacer" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Effacer le formulaire">
+            <Button fx:id="btnEffacerFormulaire" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-background-color: rgb(188, 232, 246);" text="Effacer le formulaire">
                <HBox.margin>
                   <Insets right="5.0" top="5.0" />
                </HBox.margin></Button>
@@ -122,6 +122,11 @@
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin></Button>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnEffacerSelection" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="49.0" layoutY="7.0" mnemonicParsing="false" style="-fx-background-color: rgb(188, 232, 246);" text="Effacer la sélection" />
+               </children>
+            </AnchorPane>
          </children>
       </HBox>
    </children>
