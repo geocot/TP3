@@ -37,8 +37,8 @@ public class RechercheActivitesController implements Initializable {
     private TableColumn<Activite, String> certification;
     @FXML
     private TableColumn<Activite, Float> prix;
-
-
+    @FXML
+    private TableColumn<Activite, String> periodeJournee;
 
     public void switchToHub(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("hub.fxml"));
@@ -64,6 +64,7 @@ public class RechercheActivitesController implements Initializable {
         periodeLibre.setCellValueFactory(new PropertyValueFactory<Activite, String>("periodeLibre"));
         cours.setCellValueFactory(new PropertyValueFactory<Activite, String>("cours"));
         certification.setCellValueFactory(new PropertyValueFactory<Activite, String>("certification"));
+        periodeJournee.setCellValueFactory(new PropertyValueFactory<Activite, String>("periodeJournee"));
         prix.setCellValueFactory(new PropertyValueFactory<Activite, Float>("prix"));
 
 

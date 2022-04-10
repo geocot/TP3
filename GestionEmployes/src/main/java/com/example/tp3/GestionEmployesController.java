@@ -70,6 +70,7 @@ public class GestionEmployesController implements Initializable {
     private Button btnEffacerSelection;
 
 
+
     ObservableList<Employe> listEmploye = FXCollections.observableArrayList(
             new Employe("Emp1", "Doe", "John", new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime(),  new GregorianCalendar(2018, Calendar.JUNE, 5).getTime(), "001"),
             new Employe("Emp2", "Deer", "Jane", new GregorianCalendar(2016, Calendar.DECEMBER, 19).getTime(),  new GregorianCalendar(2020, Calendar.JANUARY, 30).getTime(), "002")

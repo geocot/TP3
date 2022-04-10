@@ -7,7 +7,7 @@ public class Activite {
     private String  jour;
     private String  certification;
     private String titre;
-    private String  periodeJour;
+    private String  periodeJournee;
     private float prix;
 /*Si on veut utiliser les enums
     public Activite(String titre, enumPeriodeLibre periodeLibre, enumCours cours, enumJour jour, enumCertification certification, enumPeriodeJour periodeJour, float prix) {
@@ -58,13 +58,13 @@ public class Activite {
     }
 */
 
-    public Activite(String periodeLibre, String cours, String jour, String certification, String titre, String periodeJour, float prix) {
+    public Activite(String periodeLibre, String cours, String jour, String certification, String titre, String periodeJournee, float prix) {
         this.periodeLibre = periodeLibre;
         this.cours = cours;
         this.jour = jour;
         this.certification = certification;
         this.titre = titre;
-        this.periodeJour = periodeJour;
+        this.periodeJournee = periodeJournee;
         this.prix = prix;
     }
 
@@ -108,12 +108,12 @@ public class Activite {
         this.titre = titre;
     }
 
-    public String getPeriodeJour() {
-        return periodeJour;
+    public String getPeriodeJournee() {
+        return periodeJournee;
     }
 
-    public void setPeriodeJour(String periodeJour) {
-        this.periodeJour = periodeJour;
+    public void setPeriodeJournee(String periodeJournee) {
+        this.periodeJournee = periodeJournee;
     }
 
     public float getPrix() {

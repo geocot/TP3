@@ -172,7 +172,9 @@
                 <TableColumn fx:id="jour" minWidth="0.0" prefWidth="100.0" text="Jour" />
                 <TableColumn fx:id="cours" minWidth="0.0" prefWidth="100.0" text="Cours" />
                 <TableColumn fx:id="certification" minWidth="0.0" prefWidth="100.0" text="Certification" />
+                <TableColumn fx:id="periodeJournee" minWidth="0.0" prefWidth="100.0" text="Période journée" />
                 <TableColumn fx:id="prix" minWidth="5.0" prefWidth="100.0" text="Prix" />
+
             </columns>
         </TableView>
       <HBox alignment="CENTER" prefHeight="34.0" prefWidth="800.0" style="-fx-background-color: rgb(143, 217, 240);">
