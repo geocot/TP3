@@ -2,20 +2,22 @@ package com.example.tp3;
 
 
 public class Activite {
-    private enumPeriodeLibre periodeLibre;
-    private enumCours cours;
-    private enumJour jour;
-    private enumCertification certification;
+    private String periodeLibre;
+    private String cours;
+    private String  jour;
+    private String  certification;
     private String titre;
-    private enumPeriodeJour periodeJour;
-
-    public Activite(String titre, enumPeriodeLibre periodeLibre, enumCours cours, enumJour jour, enumCertification certification, enumPeriodeJour periodeJour) {
+    private String  periodeJour;
+    private float prix;
+/*Si on veut utiliser les enums
+    public Activite(String titre, enumPeriodeLibre periodeLibre, enumCours cours, enumJour jour, enumCertification certification, enumPeriodeJour periodeJour, float prix) {
         this.periodeLibre = periodeLibre;
         this.cours = cours;
         this.jour = jour;
         this.certification = certification;
         this.titre = titre;
         this.periodeJour = periodeJour;
+        this.prix = prix;
     }
 
     public enum enumCours{
@@ -54,36 +56,47 @@ public class Activite {
         MIDI,
         SOIR
     }
+*/
 
-    public enumPeriodeLibre getPeriodeLibre() {
+    public Activite(String periodeLibre, String cours, String jour, String certification, String titre, String periodeJour, float prix) {
+        this.periodeLibre = periodeLibre;
+        this.cours = cours;
+        this.jour = jour;
+        this.certification = certification;
+        this.titre = titre;
+        this.periodeJour = periodeJour;
+        this.prix = prix;
+    }
+
+    public String getPeriodeLibre() {
         return periodeLibre;
     }
 
-    public void setPeriodeLibre(enumPeriodeLibre periodeLibre) {
+    public void setPeriodeLibre(String periodeLibre) {
         this.periodeLibre = periodeLibre;
     }
 
-    public enumCours getCours() {
+    public String getCours() {
         return cours;
     }
 
-    public void setCours(enumCours cours) {
+    public void setCours(String cours) {
         this.cours = cours;
     }
 
-    public enumJour getJour() {
+    public String getJour() {
         return jour;
     }
 
-    public void setJour(enumJour jour) {
+    public void setJour(String jour) {
         this.jour = jour;
     }
 
-    public enumCertification getCertification() {
+    public String getCertification() {
         return certification;
     }
 
-    public void setCertification(enumCertification certification) {
+    public void setCertification(String certification) {
         this.certification = certification;
     }
 
@@ -95,11 +108,19 @@ public class Activite {
         this.titre = titre;
     }
 
-    public enumPeriodeJour getPeriodeJour() {
+    public String getPeriodeJour() {
         return periodeJour;
     }
 
-    public void setPeriodeJour(enumPeriodeJour periodeJour) {
+    public void setPeriodeJour(String periodeJour) {
         this.periodeJour = periodeJour;
+    }
+
+    public float getPrix() {
+        return prix;
+    }
+
+    public void setPrix(float prix) {
+        this.prix = prix;
     }
 }
