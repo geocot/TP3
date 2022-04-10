@@ -42,9 +42,9 @@
                               </Label>
                               <VBox layoutY="25.0" prefHeight="175.0" prefWidth="109.0">
                                  <children>
-                                    <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Adultes" />
-                                    <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Enfants" />
-                                    <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Âge d'or" />
+                                    <CheckBox fx:id="chkPeriodeLibreAdulte" mnemonicParsing="false" styleClass="activitesJours" text="Adultes" />
+                                    <CheckBox fx:id="chkPeriodeLibreEnfant" mnemonicParsing="false" styleClass="activitesJours" text="Enfants" />
+                                    <CheckBox fx:id="chkPeriodeLibreAgeOr" mnemonicParsing="false" styleClass="activitesJours" text="Âge d'or" />
                                  </children>
                               </VBox>
                            </children>
@@ -58,9 +58,9 @@
                                  </Label>
                                  <VBox layoutY="25.0" prefHeight="175.0" prefWidth="120.0">
                                      <children>
-                                         <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Adultes" />
-                                         <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Enfants" />
-                                         <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Âge d'or" />
+                                         <CheckBox fx:id="chkCoursAdulte" mnemonicParsing="false" styleClass="activitesJours" text="Adultes" />
+                                         <CheckBox fx:id="chkCoursEnfant" mnemonicParsing="false" styleClass="activitesJours" text="Enfants" />
+                                         <CheckBox fx:id="chkCoursAgeOr" mnemonicParsing="false" styleClass="activitesJours" text="Âge d'or" />
                                      </children>
                                  </VBox>
                              </children>
@@ -74,9 +74,9 @@
                                  </Label>
                                  <VBox layoutY="25.0" prefHeight="175.0" prefWidth="100.0">
                                      <children>
-                                         <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Niveau 1" />
-                                         <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Niveau 2" />
-                                         <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Niveau 3" />
+                                         <CheckBox fx:id="chkCertificationNiv1" mnemonicParsing="false" styleClass="activitesJours" text="Niveau 1" />
+                                         <CheckBox fx:id="chkCertificationNiv2" mnemonicParsing="false" styleClass="activitesJours" text="Niveau 2" />
+                                         <CheckBox fx:id="chkCertificationNiv3" mnemonicParsing="false" styleClass="activitesJours" text="Niveau 3" />
                                      </children>
                                  </VBox>
                              </children>
@@ -94,37 +94,37 @@
                         <Insets left="10.0" top="5.0" />
                      </VBox.margin>
                         </AnchorPane>
-                  <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Dimanche">
+                  <CheckBox fx:id="chkJoursDimanche" mnemonicParsing="false" styleClass="activitesJours" text="Dimanche">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </CheckBox>
-                  <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Lundi">
+                  <CheckBox fx:id="chkJoursLundi" mnemonicParsing="false" styleClass="activitesJours" text="Lundi">
                      <VBox.margin>
                          <Insets />
                      </VBox.margin>
                   </CheckBox>
-                  <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Mardi">
+                  <CheckBox fx:id="chkJoursMardi" mnemonicParsing="false" styleClass="activitesJours" text="Mardi">
                      <VBox.margin>
                          <Insets />
                      </VBox.margin>
                   </CheckBox>
-                  <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Mercredi">
+                  <CheckBox fx:id="chkJoursMercredi" mnemonicParsing="false" styleClass="activitesJours" text="Mercredi">
                      <VBox.margin>
                          <Insets />
                      </VBox.margin>
                   </CheckBox>
-                  <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Jeudi">
+                  <CheckBox fx:id="chkJoursJeudi" mnemonicParsing="false" styleClass="activitesJours" text="Jeudi">
                      <VBox.margin>
                          <Insets />
                      </VBox.margin>
                   </CheckBox>
-                  <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Vendredi">
+                  <CheckBox fx:id="chkJoursVendredi" mnemonicParsing="false" styleClass="activitesJours" text="Vendredi">
                      <VBox.margin>
                          <Insets />
                      </VBox.margin>
                   </CheckBox>
-                  <CheckBox mnemonicParsing="false" styleClass="activitesJours" text="Samedi">
+                  <CheckBox fx:id="chkJoursSamedi" mnemonicParsing="false" styleClass="activitesJours" text="Samedi">
                      <VBox.margin>
                          <Insets />
                      </VBox.margin>
@@ -145,15 +145,15 @@
                    </AnchorPane>
                   <HBox alignment="CENTER" prefHeight="35.0" prefWidth="800.0">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="Matin">
+                        <CheckBox fx:id="chkPeriodeJourMatin" mnemonicParsing="false" text="Matin">
                            <padding>
                               <Insets bottom="10.0" left="40.0" right="40.0" />
                            </padding></CheckBox>
-                        <CheckBox mnemonicParsing="false" text="Après-midi">
+                        <CheckBox fx:id="chkPeriodeJourApresMidi" mnemonicParsing="false" text="Après-midi">
                            <padding>
                               <Insets bottom="10.0" left="40.0" right="40.0" />
                            </padding></CheckBox>
-                        <CheckBox alignment="TOP_LEFT" mnemonicParsing="false" text="Soir">
+                        <CheckBox fx:id="chkPeriodeJourSoir" alignment="TOP_LEFT" mnemonicParsing="false" text="Soir">
                            <padding>
                               <Insets bottom="10.0" left="40.0" right="40.0" />
                            </padding>
@@ -179,7 +179,7 @@
         </TableView>
       <HBox alignment="CENTER" prefHeight="34.0" prefWidth="800.0" style="-fx-background-color: rgb(143, 217, 240);">
          <children>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="24.0" prefWidth="171.0" text="Rechercher" />
+            <Button fx:id="bntRecherher" alignment="CENTER" mnemonicParsing="false" prefHeight="24.0" prefWidth="171.0" text="Rechercher" />
          </children>
       </HBox>
     </children>
