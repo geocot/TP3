@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -39,6 +40,48 @@ public class RechercheActivitesController implements Initializable {
     private TableColumn<Activite, Float> prix;
     @FXML
     private TableColumn<Activite, String> periodeJournee;
+    @FXML
+    private Button bntRecherher;
+    @FXML
+    private CheckBox chkPeriodeLibreAdulte;
+    @FXML
+    private CheckBox chkPeriodeLibreEnfant;
+    @FXML
+    private CheckBox chkPeriodeLibreAgeOr;
+    @FXML
+    private CheckBox chkCoursAgeOr;
+    @FXML
+    private CheckBox chkCoursEnfant;
+    @FXML
+    private CheckBox chkCoursAdulte;
+    @FXML
+    private CheckBox chkCertificationNiv1;
+    @FXML
+    private CheckBox chkCertificationNiv2;
+    @FXML
+    private CheckBox chkCertificationNiv3;
+    @FXML
+    private CheckBox chkPeriodeJourMatin;
+    @FXML
+    private CheckBox chkPeriodeJourApresMidi;
+    @FXML
+    private CheckBox chkPeriodeJourSoir;
+    @FXML
+    private CheckBox chkJoursDimanche;
+    @FXML
+    private CheckBox chkJoursLundi;
+    @FXML
+    private CheckBox chkJoursMardi;
+    @FXML
+    private CheckBox chkJoursMercredi;
+    @FXML
+    private CheckBox chkJoursJeudi;
+    @FXML
+    private CheckBox chkJoursVendredi;
+    @FXML
+    private CheckBox chkJoursSamedi;
+
+
 
     public void switchToHub(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("hub.fxml"));
@@ -50,10 +93,13 @@ public class RechercheActivitesController implements Initializable {
 
     ObservableList<Activite> listActivites= FXCollections.observableArrayList(
             //TODO->mettre des listes pour les jours, type de période libre.
-            //Activite(String periodeLibre, String cours, String jour, String certification, String titre, String periodeJour, float prix)
-             new Activite("Adulte", "", "vendredi", "", "Bain libre", "soir", 0),
+            new Activite("Adulte", "", "vendredi", "", "Bain libre", "soir", 0),
             new Activite("", "Adulte", "vendredi", "Niveau 1", "Intro sauveteur", "soir", 20)
     );
+
+    private void rechercher(){
+
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -70,6 +116,13 @@ public class RechercheActivitesController implements Initializable {
 
         //Lien avec la liste observable
         tableVue.setItems(listActivites);
+
+        bntRecherher.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                rechercher();
+            }
+        });
 
 
         btnRetourFenPrincipale.setOnAction(new EventHandler<ActionEvent>() {
