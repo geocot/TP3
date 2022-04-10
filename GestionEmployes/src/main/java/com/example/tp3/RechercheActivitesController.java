@@ -32,7 +32,7 @@ public class RechercheActivitesController implements Initializable {
     }
 
     ObservableList<Activite> listEmploye = FXCollections.observableArrayList(
-
+        new Activite(Activite.enumPeriodeLibre.ADULTE, Activite.)
     );
 
     @Override
