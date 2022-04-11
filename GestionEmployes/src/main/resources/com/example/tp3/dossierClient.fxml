@@ -19,14 +19,14 @@
                 </Label>
             </children>
         </AnchorPane>
-        <HBox prefHeight="162.0" prefWidth="800.0">
+        <HBox prefHeight="180.0" prefWidth="800.0">
             <children>
                 <VBox prefHeight="150.0" prefWidth="400.0" style="-fx-background-color: lightgrey;" HBox.hgrow="ALWAYS">
                     <children>
                         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
                             <children>
-                                <Label text="Nom" />
-                                <TextField fx:id="txtNomUsager" prefHeight="24.0" prefWidth="230.0" />
+                                <Label text="Nom:" />
+                                <TextField fx:id="txtNom" prefHeight="24.0" prefWidth="230.0" />
                             </children>
                             <padding>
                                 <Insets right="10.0" />
@@ -34,17 +34,35 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
                             <children>
-                                <Label text="Age" />
-                                <TextField fx:id="txtNomFamille" alignment="CENTER" prefHeight="24.0" prefWidth="230.0" />
-                            </children>
-                            <padding>
-                                <Insets right="10.0" />
-                            </padding>
-                        </HBox>
-                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
-                            <children>
-                                <Label text="Sexe" />
+                                <Label text="Prénom:" />
                                 <TextField fx:id="txtPrenom" prefHeight="24.0" prefWidth="230.0" />
+                            </children>
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                            <children>
+                                <Label text="Age:" />
+                                <TextField fx:id="txtNomAge" alignment="CENTER" prefHeight="24.0" prefWidth="230.0" />
+                            </children>
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                            <children>
+                                <Label text="Sexe:" />
+                                <TextField fx:id="txtSexe" prefHeight="24.0" prefWidth="230.0" />
+                            </children>
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                            <children>
+                                <Label text="Date d'adhésion:" />
+                                <TextField fx:id="dateAdhesion" prefHeight="24.0" prefWidth="230.0" />
                             </children>
                             <padding>
                                 <Insets right="10.0" />
@@ -52,7 +70,7 @@
                         </HBox>
                     </children></VBox>
             </children></HBox>
-        <HBox prefHeight="47.0" prefWidth="800.0" style="-fx-background-color: lightgrey;" VBox.vgrow="ALWAYS">
+        <HBox prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: lightgrey;" VBox.vgrow="ALWAYS">
             <children>
                 <Label fx:id="lblErreur" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="33.0" prefWidth="544.0" textAlignment="CENTER" textFill="#ee0707" HBox.hgrow="ALWAYS">
                     <HBox.margin>
@@ -74,7 +92,7 @@
                 <Insets />
             </VBox.margin>
         </TableView>
-        <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="800.0">
+        <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="800.0">
             <children>
                 <Button fx:id="btnImprimerItems" mnemonicParsing="false" prefHeight="24.0" prefWidth="264.0" text="Imprimer les items sélectionnés">
                     <HBox.margin>
