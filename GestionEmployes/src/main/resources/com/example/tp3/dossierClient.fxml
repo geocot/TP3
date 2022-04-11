@@ -83,7 +83,7 @@
             </children></HBox>
         <TableView fx:id="tableVue" prefHeight="299.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
             <columns>
-                <TableColumn fx:id="dernierPaiement" prefWidth="198.0" text="Derniers paiements" />
+                <TableColumn fx:id="dernierPaiement" prefWidth="198.0" text="Dernier paiement" />
                 <TableColumn fx:id="noTransaction" minWidth="5.0" prefWidth="249.0" text="Numéro de transaction" />
                 <TableColumn fx:id="prix" minWidth="5.0" prefWidth="141.0" text="Prix" />
                 <TableColumn fx:id="moyenPaiement" minWidth="5.0" prefWidth="209.0" text="Moyen de paiement" />
