@@ -63,14 +63,12 @@
                         <Insets right="5.0" top="5.0" />
                     </HBox.margin></Button>
             </children></HBox>
-        <TableView fx:id="tableVue" prefHeight="350.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
+        <TableView fx:id="tableVue" prefHeight="299.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
             <columns>
-                <TableColumn fx:id="nomUsager" prefWidth="145.0" text="Nom usager" />
-                <TableColumn fx:id="nomFamille" minWidth="5.0" prefWidth="127.0" text="Nom famille" />
-                <TableColumn fx:id="prenom" minWidth="5.0" prefWidth="127.0" text="Prénom" />
-                <TableColumn fx:id="dateDebut" minWidth="5.0" prefWidth="127.0" text="Date début" />
-                <TableColumn fx:id="dateFin" minWidth="5.0" prefWidth="127.0" text="Date fin" />
-                <TableColumn fx:id="noEmploye" minWidth="5.0" prefWidth="146.0" text="No. Employé" />
+                <TableColumn fx:id="dernierPaiement" prefWidth="198.0" text="Derniers paiements" />
+                <TableColumn fx:id="noTransaction" minWidth="5.0" prefWidth="249.0" text="Numéro de transaction" />
+                <TableColumn fx:id="prix" minWidth="5.0" prefWidth="141.0" text="Prix" />
+                <TableColumn fx:id="moyenPaiement" minWidth="5.0" prefWidth="209.0" text="Moyen de paiement" />
             </columns>
             <VBox.margin>
                 <Insets />
@@ -78,23 +76,19 @@
         </TableView>
         <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="800.0">
             <children>
-                <Button fx:id="btnAjout" mnemonicParsing="false" text="Ajouter un employé">
+                <Button fx:id="btnImprimerItems" mnemonicParsing="false" prefHeight="24.0" prefWidth="264.0" text="Imprimer les items sélectionnés">
                     <HBox.margin>
                         <Insets left="10.0" />
                     </HBox.margin>
                 </Button>
-                <Button fx:id="btnRecherche" mnemonicParsing="false" text="Rechercher un employé">
+                <Button fx:id="btnRecherche" mnemonicParsing="false" prefHeight="24.0" prefWidth="93.0" text="Rechercher">
                     <HBox.margin>
                         <Insets left="10.0" />
                     </HBox.margin>
                 </Button>
-                <Button fx:id="btnSupprime" mnemonicParsing="false" text="Supprimer les éléments sélectionnés">
-                    <HBox.margin>
-                        <Insets left="10.0" />
-                    </HBox.margin></Button>
-                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                <AnchorPane prefHeight="37.0" prefWidth="331.0">
                     <children>
-                        <Button fx:id="btnEffacerSelection" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="49.0" layoutY="7.0" mnemonicParsing="false" style="-fx-background-color: rgb(188, 232, 246);" text="Effacer la sélection" />
+                        <Button fx:id="btnEffacerSelection" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="270.0" layoutY="7.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="145.0" style="-fx-background-color: rgb(188, 232, 246);" text="Effacer la sélection" />
                     </children>
                 </AnchorPane>
             </children>
