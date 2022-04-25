@@ -128,8 +128,12 @@ public class GestionEmployesController implements Initializable {
     private boolean verificationChampsAjout(){
         boolean condition = false;
 
+        //Vérification si les champs sont remplis
         if(txtNomUsager.getText() !="" & txtNomFamille.getText() !="" & txtPrenom.getText() !="" & txtNoEmploye.getText() !="" & datePickerDebut.getEditor().getText() !="" & datePickerFin.getEditor().getText() !="")  {
-            condition = true;
+            //Vérification si c'est du texte seulement
+            if(estAlphabetSeulement(txtNomUsager.getText()) & estAlphabetSeulement(txtNomFamille.getText()) & estAlphabetSeulement(txtPrenom.getText())){
+                condition = true;
+            }
         }
         return condition;
     }
@@ -165,6 +169,14 @@ public class GestionEmployesController implements Initializable {
         datePickerFin.getEditor().setText("");
     }
 
+    //Vérification si l'information contient que des lettres.
+    private boolean estAlphabetSeulement(String texte)
+    {
+        return ((!texte.equals(""))
+                && (texte != null)
+                && (texte.matches("^[a-zA-Z]*$")));
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         /*
@@ -193,6 +205,7 @@ public class GestionEmployesController implements Initializable {
         //Lien avec la liste observable
         tableVue.setItems(listEmploye);
 
+
         //Ajout des events handler pour les boutons
         btnAjout.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -209,9 +222,11 @@ public class GestionEmployesController implements Initializable {
                     Instant instantFin = Instant.from(localDateFin.atStartOfDay(ZoneId.systemDefault()));
                     Date dateFin = Date.from(instantFin);
                     //Ajout de l'employé dans la liste observable.
+
                     listEmploye.add(new Employe(txtNomUsager.getText(), txtNomFamille.getText(), txtPrenom.getText(), dateDebut, dateFin, txtNoEmploye.getText() ));
+                    effacerFormulaire(); //Efface le formulaire après l'ajout.
                 } else{
-                    lblErreur.setText("Veuillez remplir tout les champs!");
+                    lblErreur.setText("Veuillez remplir tout les champs correctements!");
                 }
             }
         });
@@ -221,6 +236,7 @@ public class GestionEmployesController implements Initializable {
                 lblErreur.setText(""); //Vide les erreurs
                 if(verificationChampsRecherche()){
                     rechercher();
+                    effacerFormulaire(); //Efface le formulaire après la recherche
                 } else{
                     lblErreur.setText("Veuillez remplir au moins 1 champ!");
                 }
