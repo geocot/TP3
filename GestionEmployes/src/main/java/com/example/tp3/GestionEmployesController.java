@@ -21,10 +21,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class GestionEmployesController implements Initializable {
     DateTimeFormatter dateFormateur = DateTimeFormatter.ofPattern("dd/MM/YYYY");
@@ -77,8 +74,20 @@ public class GestionEmployesController implements Initializable {
     );
 
     private void effacerEnregistrementTableVue(){
-        int indexSelection =  tableVue.getSelectionModel().getSelectedIndex();
-        listEmploye.remove(indexSelection);
+        Alert alerte = new Alert(Alert.AlertType.NONE);
+        // Type alerte
+        alerte.setAlertType(Alert.AlertType.CONFIRMATION);
+        alerte.setTitle("Confirmation");
+        alerte.setContentText("Êtes vous certain de vouloir supprimer ces enregistrements?");
+        // Affichage de l'alerte
+        Optional<ButtonType> option = alerte.showAndWait();
+        //Au clique du bouton OK
+        if (option.get() == ButtonType.OK) {
+            int indexSelection = tableVue.getSelectionModel().getSelectedIndex();
+            listEmploye.remove(indexSelection);
+        } else {
+            //pass
+        }
     }
 
     private void rechercher(){
