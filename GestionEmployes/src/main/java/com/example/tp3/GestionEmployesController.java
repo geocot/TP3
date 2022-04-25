@@ -124,16 +124,12 @@ public class GestionEmployesController implements Initializable {
            }
     }
 
-
     private boolean verificationChampsAjout(){
         boolean condition = false;
 
-        //Vérification si les champs sont remplis
-        if(txtNomUsager.getText() !="" & txtNomFamille.getText() !="" & txtPrenom.getText() !="" & txtNoEmploye.getText() !="" & datePickerDebut.getEditor().getText() !="" & datePickerFin.getEditor().getText() !="")  {
-            //Vérification si c'est du texte seulement
-            if(estAlphabetSeulement(txtNomUsager.getText()) & estAlphabetSeulement(txtNomFamille.getText()) & estAlphabetSeulement(txtPrenom.getText())){
-                condition = true;
-            }
+        //Vérification si les champs sont remplis correctement
+        if(estAlphabetSeulement(txtNomUsager.getText()) & estAlphabetSeulement(txtNomFamille.getText()) & estAlphabetSeulement(txtPrenom.getText()) & estDateSeulement(datePickerDebut.getEditor().getText()) & estDateSeulement(datePickerFin.getEditor().getText())){
+            condition = true;
         }
         return condition;
     }
@@ -168,6 +164,15 @@ public class GestionEmployesController implements Initializable {
         datePickerDebut.getEditor().setText("");
         datePickerFin.getEditor().setText("");
     }
+
+    //Vérification si l'information contient que des lettres.
+    private boolean estDateSeulement(String texte)
+    {
+        return ((!texte.equals(""))
+                && (texte != null)
+                && (texte.matches("^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$")));
+    }
+
 
     //Vérification si l'information contient que des lettres.
     private boolean estAlphabetSeulement(String texte)
