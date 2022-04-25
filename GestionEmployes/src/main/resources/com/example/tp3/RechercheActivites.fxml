@@ -6,12 +6,24 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600" minWidth="800" prefHeight="600.0" prefWidth="800.0" stylesheets="@appStyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp3.RechercheActivitesController">
     <children>
-        <AnchorPane id="entete" prefHeight="50.0" prefWidth="800.0">
+        <AnchorPane id="entete" prefHeight="15.0" prefWidth="800.0">
             <children>
-                <Button fx:id="btnRetourFenPrincipale" alignment="TOP_RIGHT" layoutX="581.0" layoutY="14.0" mnemonicParsing="false" text="Revenir à la fenêtre principale" AnchorPane.rightAnchor="10.0">
-                    <opaqueInsets>
-                        <Insets />
-                    </opaqueInsets></Button>
+            <HBox prefHeight="20.0" prefWidth="393.0" AnchorPane.rightAnchor="10.0">
+               <children>
+                  <Button fx:id="btnEffaceFormulaire" mnemonicParsing="false" prefHeight="24.0" prefWidth="168.0" style="-fx-background-color: rgb(102,153,255); -fx-text-fill: white;" text="Effacer le formulaire">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></Button>
+                      <Button fx:id="btnRetourFenPrincipale" alignment="TOP_RIGHT" mnemonicParsing="false" text="Revenir à la fenêtre principale">
+                          <opaqueInsets>
+                              <Insets />
+                          </opaqueInsets>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
                 <Label layoutY="2.0" prefHeight="16.0" prefWidth="300.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-padding: 10;" text="Recherche d'activités" AnchorPane.leftAnchor="10.0">
                     <opaqueInsets>
                         <Insets />
@@ -26,7 +38,7 @@
                   <Insets />
                </VBox.margin>
                <padding>
-                  <Insets left="4.0" right="4.0" />
+                  <Insets left="10.0" right="10.0" />
                </padding>
             </Label>
          </children></VBox>
@@ -190,7 +202,7 @@
         </TableView>
       <HBox alignment="CENTER" prefHeight="34.0" prefWidth="800.0" style="-fx-background-color: rgb(102,153,255); -fx-text-inner-color: white;">
          <children>
-            <Button fx:id="bntRecherher" alignment="CENTER" mnemonicParsing="false" prefHeight="24.0" prefWidth="171.0" text="Rechercher" />
+            <Button fx:id="bntRecherher" alignment="CENTER" mnemonicParsing="false" prefHeight="24.0" prefWidth="211.0" text="Rechercher" />
          </children>
       </HBox>
     </children>

@@ -40,6 +40,8 @@ public class RechercheActivitesController implements Initializable {
     @FXML
     private Button bntRecherher;
     @FXML
+    private Button btnEffaceFormulaire;
+    @FXML
     private CheckBox chkPeriodeLibreAdulte;
     @FXML
     private CheckBox chkPeriodeLibreEnfant;
@@ -218,7 +220,28 @@ public class RechercheActivitesController implements Initializable {
         return false;
     }
 
-
+    private void effacerFormulaire(){
+        chkCertificationNiv1.setSelected(false);
+        chkCertificationNiv2.setSelected(false);
+        chkCertificationNiv3.setSelected(false);
+        chkJoursDimanche.setSelected(false);
+        chkJoursLundi.setSelected(false);
+        chkJoursMardi.setSelected(false);
+        chkJoursMercredi.setSelected(false);
+        chkJoursJeudi.setSelected(false);
+        chkJoursVendredi.setSelected(false);
+        chkJoursSamedi.setSelected(false);
+        chkJoursDimanche.setSelected(false);
+        chkCoursAdulte.setSelected(false);
+        chkCoursEnfant.setSelected(false);
+        chkCoursAgeOr.setSelected(false);
+        chkPeriodeLibreAdulte.setSelected(false);
+        chkPeriodeLibreEnfant.setSelected(false);
+        chkPeriodeLibreAgeOr.setSelected(false);
+        chkPeriodeJourSoir.setSelected(false);
+        chkPeriodeJourMatin.setSelected(false);
+        chkPeriodeJourApresMidi.setSelected(false);
+    }
 
     private void selectionRechercher(){
         tableVue.getSelectionModel().clearSelection();
@@ -254,6 +277,13 @@ public class RechercheActivitesController implements Initializable {
             @Override
             public void handle(ActionEvent actionEvent) {
                 selectionRechercher();
+            }
+        });
+
+        btnEffaceFormulaire.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                effacerFormulaire();
             }
         });
 
