@@ -213,7 +213,7 @@ public class GestionEmployesController implements Initializable {
         //Lien avec la liste observable
         tableVue.setItems(listEmploye);
 
-        /* On Pourrait utiliser ceci aussi pour les boutons.
+        /* On Pourrait utiliser ceci aussi pour les boutons et les autres éléments de l'interface graphique.
         btnAjout.onMouseClickedProperty().addListener(new ChangeListener<EventHandler<? super MouseEvent>>() {
             @Override
             public void changed(ObservableValue<? extends EventHandler<? super MouseEvent>> observableValue, EventHandler<? super MouseEvent> eventHandler, EventHandler<? super MouseEvent> t1) {
