@@ -1,5 +1,7 @@
 package com.example.tp3;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -210,6 +213,13 @@ public class GestionEmployesController implements Initializable {
         //Lien avec la liste observable
         tableVue.setItems(listEmploye);
 
+        /* On Pourrait utiliser ceci aussi pour les boutons.
+        btnAjout.onMouseClickedProperty().addListener(new ChangeListener<EventHandler<? super MouseEvent>>() {
+            @Override
+            public void changed(ObservableValue<? extends EventHandler<? super MouseEvent>> observableValue, EventHandler<? super MouseEvent> eventHandler, EventHandler<? super MouseEvent> t1) {
+
+            }
+        });*/
 
         //Ajout des events handler pour les boutons
         btnAjout.setOnAction(new EventHandler<ActionEvent>() {
